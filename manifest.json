@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "vk blocker",
+	"description": "vk.com blocked feed",
+	"version": "1.0",
+	"background": {
+		"scripts": ["vk.js"]
+	},
+
+	"content_scripts": [
+        {
+            "matches": [ "https://new.vk.com/*" ], 
+            "js": [ "vk.js" ],
+            "run_at": "document_end"
+        }
+    ],
+
+	"browser_action": {
+		"default_icon": "64x64.png",
+		"default_title": "Go to Work",
+		"default_popup": "popup.html"
+	}
+}
