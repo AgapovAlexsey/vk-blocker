@@ -1,19 +1,32 @@
-var feed_lock=true;
+var IsLocked=false;
+
+chrome.storage.sync.get('IsLocked', function (obj) {
+	IsLocked=obj.IsLocked;	
+});
+
 
 function hidefeed()
 {
-	if(feed_lock==false)
+	if(IsLocked!=true)
 	return;
 
-	var child = document.getElementById("feed_rows");
+	var child = document.getElementById("feed_wall");
 	if(child==null)
 		return;
 	var feed = document.getElementById("main_feed");
 	if(feed!=null)
 	{
-			feed.innerHTML="<div style=\"width: 100%;    text-align: center;   background: white;    min-height: 150px;    margin-top: 15px; \"><img src='https://psv4.vk.me/c615616/u30437599/docs/8e94214ea781/muz.jpg?extra=zMjPfp9davvZNV91Jn-ztmeRXj6alngOVodfVaxlUd4U32yWhm5brC1BP_yFn35Bfop-kwDXdS9_5xxnURicJhjXDOAIBPTJ1At5zXjlyWimW6T_WGM0vg' style='max-width: 100%;'/></div>";
+
+			feed.innerHTML="<div style=\"width: 100%;    text-align: center;   background: white;    min-height: 150px;    margin-top: 15px; \"><img src='https://otvet.imgsmail.ru/download/5106592209c4b3c3eb09b8a46e5f4c4d_i-68.jpg' style='max-width: 100%;'/></div>";
 	}
 }
 
-//hidefeed();
-setInterval(hidefeed, 100);
+function init()
+{	
+	if(IsLocked==true)
+		hidefeed();
+}
+
+
+setInterval(init, 100);	
+

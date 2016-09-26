@@ -1,45 +1,125 @@
-*
-{
-    margin: 0;
-    padding: 0;
-}
-
-#main
-{
-    width: 280px;
-    color: #656565;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-    margin-right: 30px;
-}
-
-input[type="checkbox"] {
-    -webkit-appearance: checkbox;
-    box-sizing : border-box;
-}
+@import url('normalize.min.css');
 
 *, :after, :before {
-    cursor: default;
+  box-sizing: border-box;
+  -webkit-user-select: none;
 }
 
-[type=checkbox], [type=radio] {
-    box-sizing: border-box;
+html, body 
+{
+  width: 280px;
+  height: auto;
+  
+  font-size: 14px;
+}
+
+a,
+a:hover,
+a:active 
+{
+  color: inherit;
+  text-decoration: none;
+}
+a:hover
+{
+  text-decoration: underline;
+}
+
+.left 
+{
+  float: left;
+}
+.right 
+{
+  float: right;
+}
+.clear,
+.clear:after
+{
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+}
+
+.hidden 
+{
+  display: none;
+}
+
+hr 
+{
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  border: none;
+}
+
+#main 
+{
+  width: 280px;
+  height: auto;
+  background-color: #fff;
+  color: #333;
+
+}
+
+.block
+{
+  padding: 1em 1.2em;
+  color: #656565;
+}
+
+.block h1,
+.block h2,
+.block h3,
+.block h4,
+.block h5,
+.block h6 
+{
     padding: 0;
+    margin: 0;
+    font-weight: 400;
 }
 
-.toggle input {
-    display: none;
+.block h2 
+{
+    font-size: 1em;
+    font-weight: 600;
 }
 
-.toggle input:checked + label:before {
-    transform: translateX(20px);
-    box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.1);
-    animation: moveRight 30ms ease-in-out;
+.toggle,
+.toggle label,
+.toggle label:before 
+{
+  cursor: pointer;
 }
-.toggle label:before {
+
+.toggle,
+.toggle label 
+{
+  height: 22px;
+}
+
+.toggle label 
+{
+    position: relative;
+    display: inline-block;
+    width: 43px;
+    background-color: #e1e1e1;
+    border-radius: 22px;
+    -webkit-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.1);
+    -webkit-tap-highlight-color: transparent;
+}
+.toggle label:before 
+{
     content: "";
     position: absolute;
     top: 2px;
@@ -52,31 +132,25 @@ input[type="checkbox"] {
     transition: box-shadow 200ms ease-in-out;
     animation: moveLeft 30ms ease-in-out;
 }
-.toggle input:checked + label {
-    background-color: #57de72;
-}
-.toggle label {
-    position: relative;
-    display: inline-block;
-    width: 43px;
-    background-color: #e1e1e1;
-    border-radius: 22px;
-    -webkit-transition: all 200ms ease-in-out;
-    transition: all 200ms ease-in-out;
-    box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.1);
-    -webkit-tap-highlight-color: transparent;
-}
-
-.toggle, .toggle label {
-    height: 22px;
-}
-
-.toggle, .toggle label, .toggle label:before {
-    cursor: pointer;
-}
-
-.toggle 
+.toggle input 
 {
-    float: left;
+display: none;
+}
+.toggle input:checked + label 
+{
+    background-color: #57de72; /*982568*/
+}
+.toggle input:checked + label:before 
+{
+    transform: translateX(20px);
+    box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.1);
+    animation: moveRight 30ms ease-in-out;
 }
 
+.block.footer
+  {
+  background-color: #f2f2ed;
+  font-size: 0.75em;
+  text-align: center;
+  padding-bottom: 0.8em;
+}
