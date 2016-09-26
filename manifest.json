@@ -5,7 +5,8 @@
 	"version": "1.0",
 	"permissions": [
           "storage",
-		  "https://otvet.imgsmail.ru/*"
+		  "https://otvet.imgsmail.ru/*",
+		  "https://github.com/*"
         ],	
 	"content_scripts": [
         {

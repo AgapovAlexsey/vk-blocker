@@ -23,3 +23,8 @@ toggle.onclick = function(event)
         });		
 	}
 };
+
+document.getElementById("issue").onclick = function(event)
+{
+	window.open('https://github.com/AgapovAlexsey/vk-blocker/issues');	
+};
